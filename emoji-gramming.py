@@ -62,12 +62,12 @@ def clean(setcmd=False):
         raise EmojiError
 
 import linecache
-import os
-dect = os.getcwd()
-print('📁 : '+dect)
-code = input("💻 ➡️ ")
-code = dect+"/"+code
-print(code)
+import sys
+if len(sys.argv) == 1:
+    print("Need filename")
+    exit(1)
+code = sys.argv[1] # this is filename, not the actual code
+
 while 1 == 1:
     try:
         vardata[128680] = vardata[128680] + 1
@@ -108,5 +108,5 @@ while 1 == 1:
                 vardata[128680] = vardata[128680] + 1
     except EmojiError:
         break
-print("💻   🔚")
+
 linecache.clearcache()
